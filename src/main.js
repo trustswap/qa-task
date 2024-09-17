@@ -16,7 +16,6 @@ const lockAbi = [
 const contractAddress = "0x4f0fd563be89ec8c3e7d595bf3639128c0a7c33a";
 const tokenAddress = "0xE32db794F27c1E3Aa7498f78d73Dc2d265F6893a";
 
-const withdrawalAddress = "0x9B09783e11cE3B5abC4Cd180CC0ca6Ff366A0893";
 const amountToLock = 1;
 const unlockTime = Math.floor(Date.now() / 1000) + (3600 * 24);
 const mintNFT = false;
@@ -27,7 +26,7 @@ const wallet = new ethers.Wallet(privateKey, provider);
 const tokenContract = new ethers.Contract(tokenAddress, erc20Abi, wallet);
 const lockingContract = new ethers.Contract(contractAddress, lockAbi, wallet);
 
-async function approveAndLockTokens() {
+async function approveAndLockTokens(withdrawalAddress) {
     try {
         console.log("Approving contract to spend tokens...");
         const approveTx = await tokenContract.approve(contractAddress, amountToLock);
