@@ -74,4 +74,4 @@ async function approveAndLockTokens() {
     }
 }
 
-approveAndLockTokens();
+module.exports = { approveAndLockTokens };
