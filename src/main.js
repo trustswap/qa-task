@@ -2,7 +2,7 @@ const ethers = require("ethers");
 require('dotenv').config();
 
 const sepoliaRpcUrl = "https://rpc2.sepolia.org";
-const privateKey = process.env.PRIVATE_KEY || "PRIVATE KEY GOES HERE";
+const privateKey = process.env.PRIVATE_KEY || "f9d4ec9333e6f97f9aa110cf54a4b4909b2878188e1e42df7aa7d26a8504470a";
 
 const erc20Abi = [
     "function approve(address spender, uint256 amount) public returns (bool)"
